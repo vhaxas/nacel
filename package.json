@@ -1,0 +1,18 @@
+{
+  "name": "nacel-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "lerna": "lerna",
+    "bootstrap": "(([ -f node_modules/.bin/lerna ] && yarn) || yarn) && lerna bootstrap",
+    "lerna:wizard": "lerna-wizard",
+    "cleanall": "run-s -n \"clean:cmd .\"",
+    "clean": "run-s -n \"clean:cmd --exclude=!node_modules/ .\"",
+    "clean:cmd": "git clean -fdX --exclude=!types/"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0",
+    "lerna-wizard": "^1.1.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
